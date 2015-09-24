@@ -27,7 +27,7 @@ namespace StudentModulePuntApp.Repositories
                 {
                     String s = await response.Content.ReadAsStringAsync();
                     List<StudentModulePunt> resultaat = JsonConvert.DeserializeObject<List<StudentModulePunt>>(s);
-                    resultaat.Sort();
+                    //resultaat.Sort();
                     return resultaat;
                 }
                 else
