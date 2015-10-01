@@ -21,7 +21,13 @@ namespace StudentModulePuntApp.Models
         {
             get
             {
-                return (Email.Split(new char[] { '.' })[1]).Split(new char[] { '@' })[0].Trim();
+                string[] EmailArray = Email.Split(new char[] { '.' });
+                string achternaam = "";
+
+                if(EmailArray.Length == 4) achternaam = EmailArray[1].Split(new char[] { '@' })[0].Trim();
+                else if (EmailArray.Length > 4) achternaam = (EmailArray[1] + ' ' + EmailArray[2]).Split(new char[] { '@' })[0].Trim();
+
+                return achternaam;
             }
         }
         public String GeboortePlaats { get; set; }
