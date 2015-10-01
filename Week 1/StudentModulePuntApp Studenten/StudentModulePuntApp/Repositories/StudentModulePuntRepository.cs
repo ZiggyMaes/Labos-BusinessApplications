@@ -1,4 +1,6 @@
 ﻿using Newtonsoft.Json;
+using StudentModulePuntApp.Helpers;
+using StudentModulePuntApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +12,14 @@ namespace StudentModulePuntApp.Repositories
 {
     public class StudentModulePuntRepository
     {
+        public static List<StudentModulePunt> StudentModulePuntVoorStudent(Student student, List<StudentModulePunt> smpsInput)
+        {
+            List<StudentModulePunt> smps = (from smp in smpsInput where smp.Email.Equals(student.Email) select smp).ToList<StudentModulePunt>();
+            smps.Sort(new StudentModulePuntPuntSorter());
+            smps.Reverse();
+            return smps;
+        }
+
         public async static Task<List<StudentModulePunt>> Entries()
         {
             using (var client = new HttpClient())
@@ -24,6 +34,7 @@ namespace StudentModulePuntApp.Repositories
                 {
                     String s = await response.Content.ReadAsStringAsync();
                     List<StudentModulePunt> resultaat = JsonConvert.DeserializeObject<List<StudentModulePunt>>(s);
+                    resultaat.Sort();
                     return resultaat;
                 }
                 else
