@@ -1,0 +1,23 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LandInformatieDemo.DataTemplates">
+
+    <DataTemplate x:Key="landenTemplate">
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <Image Source="{Binding VlagURL}" />
+            <TextBox
+                            Text="{Binding LandNaam,Mode=TwoWay}"
+                            Grid.Column="1" Margin="10,0,0,0" VerticalAlignment="Center" />
+            <CheckBox 
+                            IsChecked="{Binding IsEuropees, Mode=TwoWay}"
+                            Grid.Column="2" Content="Europees"  />
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>

@@ -24,7 +24,7 @@ namespace StudentModulePuntApp.Models
                 string[] EmailArray = Email.Split(new char[] { '.' });
                 string achternaam = "";
 
-                if(EmailArray.Length == 4) achternaam = EmailArray[1].Split(new char[] { '@' })[0].Trim();
+                if (EmailArray.Length == 4) achternaam = EmailArray[1].Split(new char[] { '@' })[0].Trim();
                 else if (EmailArray.Length > 4) achternaam = (EmailArray[1] + ' ' + EmailArray[2]).Split(new char[] { '@' })[0].Trim();
 
                 return achternaam;
@@ -40,8 +40,6 @@ namespace StudentModulePuntApp.Models
 
             return this.Email.Equals(ander.Email) &&
                 this.GeboortePlaats.Equals(ander.GeboortePlaats);
-
-
         }
 
         public override int GetHashCode()

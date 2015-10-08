@@ -1,0 +1,23 @@
+﻿<Application
+    x:Class="LandInformatieDemo.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LandInformatieDemo"
+    xmlns:models="using:LandInformatieDemo.Models"
+    xmlns:repositories="using:LandInformatieDemo.Repositories"
+    xmlns:vm="using:LandInformatieDemo.ViewModels"
+    RequestedTheme="Light">
+    <Application.Resources>
+        <ResourceDictionary >
+            <ResourceDictionary.MergedDictionaries >
+                <ResourceDictionary Source="/DataTemplates/DataTemplates.xaml" />
+                <ResourceDictionary Source="/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <models:LandInfo x:Key="belgie" LandNaam="Belgie" IsEuropees="True" 
+                    VlagURL = "http://www.flagchart.net/f/p/land/belgie.gif" />
+            <models:LandInfo x:Key="frankrijk" LandNaam="Frankrijk" IsEuropees="True"
+                    VlagURL="http://www.flagchart.net/f/p/land/frankrij.gif" />
+            <repositories:LandInfoRepository x:Key="landrepos" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
