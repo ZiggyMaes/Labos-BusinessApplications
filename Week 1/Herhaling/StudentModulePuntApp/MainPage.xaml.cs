@@ -17,7 +17,7 @@ namespace StudentModulePuntApp
 
         public MainPage()
         {
-            this.InitializeComponent();     
+            this.InitializeComponent();
         }
         private async void LoadScores()
         {
@@ -32,12 +32,29 @@ namespace StudentModulePuntApp
         {
             List<string> EmailList = new List<string>();
             //StudentModulePunt smp = new StudentModulePunt();
-            foreach (StudentModulePunt s in _smp)
-            {
-                EmailList.Add(s.Email);
-            }
+            foreach (StudentModulePunt s in _smp) EmailList.Add(s.Email);
 
             return EmailList;
+        }
+        private List<StudentModulePunt> StudentScore(string Emailadres)
+        {
+            List<StudentModulePunt> ScoreLijst = new List<StudentModulePunt>();
+            foreach (StudentModulePunt student in _smp)
+            {
+                if (student.Email == Emailadres)  ScoreLijst.Add(student);
+            }
+            return ScoreLijst;
+        }
+
+        private void cmbStudent_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string email = cmbStudent.SelectedItem.ToString();
+            FillScoreList(StudentScore(email));
+        }
+
+        private void FillScoreList(List<StudentModulePunt> ScoreLijst)
+        {
+            lsbModules.ItemsSource = ScoreLijst;
         }
     }
 }

@@ -21,7 +21,7 @@
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         
-        <ComboBox x:Name="cmbStudent" Grid.Row="0" Grid.ColumnSpan="3" Margin="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></ComboBox>
+        <ComboBox x:Name="cmbStudent" Grid.Row="0" Grid.ColumnSpan="3" Margin="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectionChanged="cmbStudent_SelectionChanged"></ComboBox>
         <ListBox x:Name="lsbModules" Grid.Row="1" Grid.ColumnSpan="3" />
         <TextBlock x:Name="txbAantal" Grid.Row="3" Grid.Column="0"></TextBlock>
         <TextBlock x:Name="txbMaximum" Grid.Row="3" Grid.Column="1"></TextBlock>

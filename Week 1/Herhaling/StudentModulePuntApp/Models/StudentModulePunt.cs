@@ -12,5 +12,10 @@ namespace StudentModulePuntApp.Models
         public string Geboorteplaats { get; set; }
         public string Module { get; set; }
         public int Punt { get; set; }
+
+        public override string ToString()
+        {
+            return Module + ": " + Punt;
+        }
     }
 }
