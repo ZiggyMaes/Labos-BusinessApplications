@@ -6,7 +6,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"    
     xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
     x:Class="StudentModulePuntApp.MainPage"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    Loaded="Page_Loaded">
     <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="48"/>
@@ -20,10 +21,10 @@
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         
-        <ComboBox Grid.Row="0" Grid.ColumnSpan="3" Margin="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></ComboBox>
-        <ListBox Grid.Row="1" Grid.ColumnSpan="3"/>
-        <TextBlock Grid.Row="3" Grid.Column="0"></TextBlock>
-        <TextBlock Grid.Row="3" Grid.Column="1"></TextBlock>
-        <TextBlock Grid.Row="3" Grid.Column="2"></TextBlock>
+        <ComboBox x:Name="cmbStudent" Grid.Row="0" Grid.ColumnSpan="3" Margin="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></ComboBox>
+        <ListBox x:Name="lsbModules" Grid.Row="1" Grid.ColumnSpan="3" />
+        <TextBlock x:Name="txbAantal" Grid.Row="3" Grid.Column="0"></TextBlock>
+        <TextBlock x:Name="txbMaximum" Grid.Row="3" Grid.Column="1"></TextBlock>
+        <TextBlock x:Name="txbGemiddelde" Grid.Row="3" Grid.Column="2"></TextBlock>
     </Grid>
 </Page>
