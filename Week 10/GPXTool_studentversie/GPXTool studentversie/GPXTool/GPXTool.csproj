@@ -97,9 +97,13 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\SQLiteService.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\ModelBaseClass.cs" />
+    <Compile Include="Models\Trk.cs" />
+    <Compile Include="Models\TrkPt.cs" />
     <Compile Include="Pages\NewTrackPage.xaml.cs">
       <DependentUpon>NewTrackPage.xaml</DependentUpon>
     </Compile>
@@ -107,6 +111,8 @@
       <DependentUpon>ViewTrackPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\TrkPtRespository.cs" />
+    <Compile Include="Repositories\TrkRepository.cs" />
     <Compile Include="Services\IocContainer.cs" />
     <Compile Include="ViewModel\ApplicationViewModel.cs" />
     <Compile Include="ViewModel\NewTrackViewModel.cs" />
@@ -160,10 +166,7 @@
       <Name>SQLite for Universal App Platform</Name>
     </SDKReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

@@ -10,15 +10,15 @@ namespace GPXTool.Data
 {
     public class SQLiteService
     {
+        public static string DBLocation;
         public static void InitSQLite()
         {
-            String path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "GPXTool.sqlite");
-            using (SQLiteConnection conn = new SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path))
+            DBLocation = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "GPXTool.sqlite");
+            using (SQLiteConnection conn = new SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), DBLocation))
             {
                 CreateTrkTB(conn);
                 CreateTrkPtTB(conn);
             }
-
         }
         private static void CreateTrkTB(SQLiteConnection conn)
         {
@@ -41,6 +41,16 @@ namespace GPXTool.Data
                 + ")";
             SQLiteCommand cc = conn.CreateCommand(createtrkpt);
             cc.ExecuteNonQuery();
+        }
+        public static int ExecuteInsert(String sql, params object[] args)
+        { 
+            using (SQLiteConnection conn = new SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), DBLocation))
+            {
+                conn.Execute(sql, args);
+                int i = conn.ExecuteScalar<int>("select last_inserted_rowid()");
+                return i;
+            }
+
         }
     }
 }
