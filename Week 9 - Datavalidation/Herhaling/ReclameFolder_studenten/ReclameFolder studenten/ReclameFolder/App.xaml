@@ -1,0 +1,17 @@
+﻿<Application x:Class="ReclameFolder.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ReclameFolder" 
+             StartupUri="Windows/ReclameCampagnesWindow.xaml" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             d1p1:Ignorable="d" 
+             xmlns:services="clr-namespace:ReclameFolder.Services"
+             xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006">
+    <Application.Resources>
+        <ResourceDictionary>
+            <services:IocContainer x:Key="ioc" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/DataTemplates/DataTemplates.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

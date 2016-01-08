@@ -1,0 +1,14 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BALaboVoorbeeld.UWP.DataTemplates">
+
+    <Style x:Key="lstidflt" TargetType="ListBoxItem">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+    </Style>
+
+    <DataTemplate x:Key="weatheritemdt"  >
+        <TextBlock Text="weatheritemdt: replace pls" />
+    </DataTemplate>
+</ResourceDictionary>
